@@ -53,6 +53,36 @@ int main(void) {
 
   MPI_Barrier(MPI_COMM_WORLD);
 
+  // Print local to node stuff
+
+  // for (int i = 0; i < world; i++){
+  //   if (rank == i){
+  //     if (processor_name == previous_processor_name){
+  //       exit loop
+  //     }
+  //     and if processor_name .ne. previous_processor_names
+  //     printf("Node %s has %d active GPUs\n", processor_name, nDevices);
+  //     processor_name = used_processor_name
+  //   }
+  // }
+  //
+  //
+  // OR
+  //
+  // have a vector with all of the strings
+  // Sort
+
+
+  // Testing...
+  // send_data, send_count, MPI_Datatype, recv_data, recv_count, MPI_Datatype, root, MPI_COMM_WORLD
+  // MPI_Gather(processor_name, MPI_MAX_PROCESSOR_NAME, MPI_CHAR, total[rank+1], MPI_MAX_PROCESSOR_NAME, MPI_CHAR, 0, MPI_COMM_WORLD);
+  //
+  // if (rank==0){
+  //
+  //   printf(total)
+  //
+  // }
+
   //------------------------------------------------------
   // Uncomment to print information about each GPU thread
   //------------------------------------------------------

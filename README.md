@@ -2,21 +2,11 @@
 
 Directory containing development of a "hello hardware" code. This prints information about the hardware available to a program given the parameters defined in the submission script. Code available [here](hello-hardware.cu) or see [truncated output](example_short_output.md) and [full output](example_full_output.md) for more information.
 
-<!-- ## To do: -->
-
-**Write a “hello hardware” code to confirm the hardware we are using when launching a submission script.**
-
-<!-- **DONE**
-
-- [x] OpenMP+MPI
-- [x] GPU
-- [ ] Try to locate cuda code that runs over not only multiple gpu devices but also over multiple gpu nodes.  If it exists, then locate code that cuda uses to determine node count and also how it references unique gpu devices, and then use that code in the hello hardware code; otherwise, simply use #gpus=#gpus_reported_by_cuda x #nodes. Can CUDA find out how many nodes there are?
-    Propose to deprecate: no point? -->
-
 ***
 
+## Compile on [Cirrus](https://cirrus.readthedocs.io/en/main/):
 
-## Compile:
+Compilation instructions for Cirrus, a EPSRC Tier-2 National HPC Facility housed at EPCC's Advanced Computing Facility.
 
 ```
 module load nvidia/nvhpc
@@ -32,7 +22,8 @@ module load mpt
 nvcc -Xcompiler -fopenmp hello-hardware.cu -lmpi -lgomp -o hello-gpu-mpt
 ```
 
-
+mpicxx hello-hardware.cpp
+mpirun -np 2 ./a.out     
 
 <!--
 ## Notes:
